@@ -1,88 +1,215 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subnautica 2 - Landing Page</title>
+    <title>Subnautica 2 - Official Mobile Installer</title>
+    <!-- Tailwind CSS for Professional UI -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background-color: #030f1a; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        .neon-glow { box-shadow: 0 0 20px rgba(6, 182, 212, 0.5); }
+        body { background-color: #020912; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        .neon-glow { box-shadow: 0 0 25px rgba(6, 182, 212, 0.4); }
+        .verified-badge { background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%); }
     </style>
 </head>
-<body class="text-gray-200 antialiased">
+<body class="text-gray-200 antialiased min-h-screen flex flex-col justify-between">
 
-    <!-- Hero Section -->
-    <header class="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-[#020a11] via-[#051b2e] to-[#030f1a] px-6 text-center overflow-hidden">
-        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551244072-5d12893278ab?q=80&w=1600')] bg-cover bg-center opacity-20 pointer-events-none"></div>
-        
-        <div class="relative z-10 max-w-3xl mx-auto">
-            <span class="inline-block bg-cyan-500/10 text-cyan-400 text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6 border border-cyan-500/30">
-                🔥 متوفرة الآن في الـ Early Access (ماي 2026)
-            </span>
-            <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6">
-                SUBNAUTICA <span class="text-cyan-400">2</span>
-            </h1>
-            <p class="text-lg md:text-xl text-gray-400 mb-10 leading-relaxed">
-                اكتشف كوكباً مائياً جديداً بالكامل. ابنِ قاعدتك، واجه المخاطر، والعب لأول مرة مع أصدقائك في طور الـ Co-op المشترك!
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="#platforms" class="w-full sm:w-auto bg-cyan-500 hover:bg-cyan-400 text-black font-bold px-8 py-4 rounded-xl transition duration-300 transform hover:-translate-y-1 text-center neon-glow">
-                    احصل عليها الآن
-                </a>
-                <a href="#" class="w-full sm:w-auto bg-white/5 hover:bg-white/10 text-white font-medium px-8 py-4 rounded-xl transition duration-300 border border-white/10 text-center">
-                    شاهد العرض الإعلاني 🎬
-                </a>
-            </div>
-        </div>
+    <!-- TOP HEADER -->
+    <header class="w-full py-4 text-center border-b border-white/5 bg-[#031222]/80 backdrop-blur-md sticky top-0 z-50">
+        <h1 class="text-xl font-black tracking-widest text-white">SUBNAUTICA 2</h1>
     </header>
 
-    <!-- Features Section -->
-    <section class="py-24 px-6 max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold text-center text-white mb-16">مميزات الجيل الجديد من اللعبة</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Card 1 -->
-            <div class="bg-[#051627] p-8 rounded-2xl border border-white/5 hover:border-cyan-500/30 transition duration-300">
-                <div class="text-3xl mb-4">👥</div>
-                <h3 class="text-xl font-bold text-white mb-2">طور جماعي مشترك (Co-op)</h3>
-                <p class="text-gray-400">استكشف الأعماق مع فريقك الخاص الذي يصل إلى 4 لاعبين، ابنوا القواعد وتشاركوا الموارد معاً.</p>
-            </div>
-            <!-- Card 2 -->
-            <div class="bg-[#051627] p-8 rounded-2xl border border-white/5 hover:border-cyan-500/30 transition duration-300">
-                <div class="text-3xl mb-4">🎮</div>
-                <h3 class="text-xl font-bold text-white mb-2">محرك Unreal Engine 5</h3>
-                <p class="text-gray-400">جرافيكس أسطوري وفيزياء مياه فائقة الواقعية تجعلك تشعر بكل قطرة ماء وكل خطر يحيط بك.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Platforms Section -->
-    <section id="platforms" class="bg-[#020a11] py-24 px-6 border-t border-white/5">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl font-bold text-white mb-4">المنصات المدعومة حالياً</h2>
-            <p class="text-gray-400 mb-12">اللعبة متوفرة حالياً للحواسب والأجهزة القوية فقط وغير متوفرة للهواتف.</p>
+    <!-- MAIN CONTAINER -->
+    <main class="flex-grow flex flex-col items-center justify-center px-4 py-8 max-w-md mx-auto w-full">
+        
+        <!-- STEP 1: MAIN LANDING PAGE -->
+        <div id="step-landing" class="w-full space-y-6 text-center">
             
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                <div class="bg-[#051627] p-6 rounded-xl border border-white/5">
-                    <p class="font-bold text-white mb-4">Steam (PC)</p>
-                    <a href="#" class="block bg-cyan-600 hover:bg-cyan-500 text-white text-sm font-bold py-2 rounded-lg transition">تحميل الآن</a>
+            <!-- APPLICATION LOGO PLACEHOLDER -->
+            <div class="flex justify-center">
+                <div class="w-28 h-28 bg-[#051a30] rounded-3xl border-2 border-cyan-500/30 flex items-center justify-center p-2 shadow-xl">
+                    <!-- REPLACE 'logo-url.png' WITH YOUR ACTUAL APP LOGO -->
+                    <img src="https://placehold.co/150x150/051a30/06b6d4?text=SUBNAUTICA+2" alt="Subnautica 2 Logo" class="w-full h-full object-cover rounded-2xl">
                 </div>
-                <div class="bg-[#051627] p-6 rounded-xl border border-white/5">
-                    <p class="font-bold text-white mb-4">Epic Games</p>
-                    <a href="#" class="block bg-gray-700 hover:bg-gray-600 text-white text-sm font-bold py-2 rounded-lg transition">زيارة المتجر</a>
+            </div>
+
+            <!-- GAME BRIEF DETAILS -->
+            <div>
+                <h2 class="text-2xl font-bold text-white mb-1">Subnautica 2 Mobile</h2>
+                <p class="text-xs text-cyan-400 font-semibold tracking-wider uppercase">Official Early Access Port</p>
+            </div>
+
+            <!-- GAME COVER IMAGE PLACEHOLDER -->
+            <div class="w-full aspect-video bg-[#051a30] rounded-2xl overflow-hidden border border-white/5 shadow-md">
+                <!-- REPLACE 'cover-url.jpg' WITH YOUR ACTUAL GAMEPLAY SCREENSHOT -->
+                <img src="https://placehold.co/600x340/051a30/ffffff?text=Gameplay+Preview" alt="Subnautica 2 Gameplay" class="w-full h-full object-cover">
+            </div>
+
+            <!-- PRIMARY DOWNLOAD BUTTON -->
+            <div class="pt-2">
+                <button onclick="ShowAppDetails()" class="w-full bg-cyan-500 hover:bg-cyan-400 text-black font-black text-lg py-4 rounded-2xl transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 neon-glow">
+                    DOWNLOAD NOW
+                </button>
+            </div>
+
+            <!-- 100% PROFESSIONAL VERIFICATION BADGES -->
+            <div class="bg-[#041426] border border-white/5 rounded-2xl p-4 flex justify-around items-center text-xs text-gray-400">
+                <div class="flex flex-col items-center gap-1.5">
+                    <span class="text-emerald-400 text-lg">🛡️</span>
+                    <span>Safe & Secure</span>
                 </div>
-                <div class="bg-[#051627] p-6 rounded-xl border border-white/5">
-                    <p class="font-bold text-white mb-4">Xbox Series X/S</p>
-                    <a href="#" class="block bg-green-600 hover:bg-green-500 text-white text-sm font-bold py-2 rounded-lg transition">شغلها بـ Game Pass</a>
+                <div class="h-8 w-[1px] bg-white/5"></div>
+                <div class="flex flex-col items-center gap-1.5">
+                    <span class="text-cyan-400 text-lg">✅</span>
+                    <span>Verified File</span>
+                </div>
+                <div class="h-8 w-[1px] bg-white/5"></div>
+                <div class="flex flex-col items-center gap-1.5">
+                    <span class="text-amber-400 text-lg">⭐</span>
+                    <span>No Root/Jailbreak</span>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="py-8 text-center text-sm text-gray-600 border-t border-white/5">
-        <p>© 2026 Subnautica 2 Fan Landing Page. جميع الحقوق محفوظة للشركة المطورة.</p>
+        <!-- STEP 2: APP DETAILS & DESCRIPTION PAGE (HIDDEN BY DEFAULT) -->
+        <div id="step-details" class="w-full space-y-6 hidden">
+            
+            <!-- APP HEADER WITH LIVE STATS -->
+            <div class="flex items-center gap-4 bg-[#041426] p-4 rounded-2xl border border-white/5">
+                <div class="w-16 h-16 bg-[#051a30] rounded-2xl flex-shrink-0">
+                    <!-- APP LOGO HERE AGAIN -->
+                    <img src="https://placehold.co/150x150/051a30/06b6d4?text=S2" class="w-full h-full object-cover rounded-2xl">
+                </div>
+                <div class="flex-grow">
+                    <h3 class="font-bold text-white">Subnautica 2 Installer</h3>
+                    <div class="flex items-center gap-3 text-xs text-gray-400 mt-1">
+                        <span>⭐ 4.9 (42K reviews)</span>
+                        <span>•</span>
+                        <span>1.2 GB</span>
+                    </div>
+                    <div class="text-[11px] text-emerald-400 font-medium mt-0.5">📥 500,000+ Downloads</div>
+                </div>
+            </div>
+
+            <!-- REAL GAME DESCRIPTION -->
+            <div class="bg-[#041426] p-5 rounded-2xl border border-white/5 space-y-3 text-sm leading-relaxed">
+                <h4 class="font-bold text-white text-base">About this game</h4>
+                <p class="text-gray-400 text-xs">
+                    Welcome back to the alien ocean world. <span class="text-white font-medium">Subnautica 2</span> introduces an all-new underwater planet filled with vibrant biomes, mysterious creatures, and hidden dangers. 
+                </p>
+                <p class="text-gray-400 text-xs">
+                    For the first time ever, survive solo or team up with up to 4 players in full co-op mode. Build highly advanced subaquatic bases, craft state-of-the-art deep-sea diving gear, and evade massive new Leviathan threats lurking in the darkest depths of the ocean.
+                </p>
+            </div>
+
+            <!-- FINAL CONFIRM DOWNLOAD BUTTON -->
+            <button onclick="StartLoading()" class="w-full bg-emerald-500 hover:bg-emerald-400 text-black font-black text-lg py-4 rounded-2xl transition-all duration-300">
+                CONFIRM INSTALLATION
+            </button>
+        </div>
+
+        <!-- STEP 3: DYNAMIC LOADING SCREEN (HIDDEN BY DEFAULT) -->
+        <div id="step-loading" class="w-full space-y-6 text-center hidden">
+            <div class="space-y-2">
+                <h3 id="loading-status" class="text-lg font-bold text-white animate-pulse">Extracting game files...</h3>
+                <p class="text-xs text-gray-400">Please do not close this window.</p>
+            </div>
+            
+            <!-- PROGRESS BAR CONTAINER -->
+            <div class="w-full bg-[#041426] h-4 rounded-full overflow-hidden border border-white/10 p-[2px]">
+                <div id="progress-bar" class="bg-gradient-to-r from-cyan-500 to-emerald-500 h-full w-0 rounded-full transition-all duration-100 ease-out"></div>
+            </div>
+            
+            <div id="progress-text" class="text-sm font-mono text-cyan-400">0%</div>
+        </div>
+
+        <!-- STEP 4: CONTENT LOCKER SCREEN (HIDDEN BY DEFAULT) -->
+        <div id="step-locker" class="w-full space-y-6 text-center hidden">
+            <div class="scale-125 mb-2">🔒</div>
+            <div>
+                <h3 class="text-xl font-bold text-white">Human Verification Required</h3>
+                <p class="text-xs text-gray-400 mt-2 px-4">To prevent automated bot abuse and complete the installation, please verify you are a human. Your download will resume automatically right after.</p>
+            </div>
+
+            <!-- CONTENT LOCKER BOX PLACEHOLDER -->
+            <div class="bg-[#041426] border border-cyan-500/20 rounded-2xl p-6 min-h-[200px] flex flex-col justify-center items-center shadow-inner">
+                <p class="text-xs text-gray-400 mb-4 font-medium">👉 Complete ONE short offer below to unlock 👈</p>
+                
+                <!-- PLACE YOUR CPA NETWORK LOCKER IFRAME OR BUTTONS HERE -->
+                <div class="w-full space-y-3">
+                    <button onclick="alert('Put your CPA Offer Link Here')" class="w-full bg-white/5 hover:bg-white/10 border border-white/10 p-3 rounded-xl text-sm font-semibold transition text-left flex items-center justify-between">
+                        <span>📱 Verify via Mobile App</span>
+                        <span class="text-cyan-400">FREE</span>
+                    </button>
+                    <button onclick="alert('Put your CPA Offer Link Here')" class="w-full bg-white/5 hover:bg-white/10 border border-white/10 p-3 rounded-xl text-sm font-semibold transition text-left flex items-center justify-between">
+                        <span>📝 Complete Brief Survey</span>
+                        <span class="text-cyan-400">FREE</span>
+                    </button>
+                </div>
+                <!-- 
+                Alternatively, if using OGAds/AdBlueMedia script, paste their iframe/code right inside this div.
+                -->
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="w-full py-4 text-center text-[10px] text-gray-600 border-t border-white/5">
+        <p>© 2026 Subnautica 2 Fan Project. All Rights Reserved. Verified by SafeNet Mobile Mobile Security.</p>
     </footer>
 
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        function ShowAppDetails() {
+            document.getElementById('step-landing').classList.add('hidden');
+            document.getElementById('step-details').classList.remove('hidden');
+        }
+
+        function StartLoading() {
+            document.getElementById('step-details').classList.add('hidden');
+            document.getElementById('step-loading').classList.remove('hidden');
+
+            let progressBar = document.getElementById('progress-bar');
+            let progressText = document.getElementById('progress-text');
+            let loadingStatus = document.getElementById('loading-status');
+            let width = 0;
+
+            const statuses = [
+                "Connecting to secure server...",
+                "Downloading game cache (1.2 GB)...",
+                "Extracting obb assets...",
+                "Verifying device signature...",
+                "Finalizing setup..."
+            ];
+
+            let interval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        ShowLocker();
+                    }, 500);
+                } else {
+                    width++;
+                    progressBar.style.width = width + '%';
+                    progressText.innerText = width + '%';
+
+                    // Change status text based on progress
+                    if(width == 20) loadingStatus.innerText = statuses[1];
+                    if(width == 50) loadingStatus.innerText = statuses[2];
+                    if(width == 75) loadingStatus.innerText = statuses[3];
+                    if(width == 90) loadingStatus.innerText = statuses[4];
+                }
+            }, 50); // Speed of the loader. 50ms * 100 = 5 seconds total loading time.
+        }
+
+        function ShowLocker() {
+            document.getElementById('step-loading').classList.add('hidden');
+            document.getElementById('step-locker').classList.remove('hidden');
+            
+            // OPTIONAL: If your CPA Network provides an auto-popup script, trigger it here.
+            // Example: _callLocker();
+        }
+    </script>
 </body>
 </html>
