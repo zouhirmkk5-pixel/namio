@@ -1,396 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premium Gift Cards</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-font-family:'Inter',sans-serif;
-background:#050505;
-color:#fff;
-overflow-x:hidden;
-min-height:100vh;
-}
-
-body::before{
-content:"";
-position:fixed;
-inset:0;
-background:
-radial-gradient(circle at 15% 20%,rgba(59,130,246,.16),transparent 25%),
-radial-gradient(circle at 85% 25%,rgba(168,85,247,.12),transparent 25%),
-radial-gradient(circle at 50% 85%,rgba(34,197,94,.10),transparent 25%);
-animation:bgMove 10s ease-in-out infinite alternate;
-z-index:-2;
-}
-
-body::after{
-content:"";
-position:fixed;
-inset:0;
-background:linear-gradient(135deg,#000,#0b0b0b,#000);
-z-index:-3;
-}
-
-@keyframes bgMove{
-100%{transform:scale(1.12) translateY(-18px);}
-}
-
-.header{text-align:center;padding:34px 15px 20px}
-.title{
-font-size:34px;
-font-weight:800;
-background:linear-gradient(90deg,#fff,#60a5fa,#a855f7);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-.sub{margin-top:10px;font-size:14px;opacity:.65}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:18px;
-padding:18px;
-max-width:580px;
-margin:auto;
-}
-
-.card{
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.06);
-border-radius:24px;
-padding:14px;
-cursor:pointer;
-transition:.25s ease;
-backdrop-filter:blur(12px);
-box-shadow:0 15px 30px rgba(0,0,0,.45);
-}
-
-.card:hover{transform:translateY(-6px);}
-
-.card img{
-width:100%;
-height:125px;
-object-fit:contain;
-background:#fff;
-padding:14px;
-border-radius:18px;
-}
-
-.name{margin-top:12px;font-size:15px;font-weight:800}
-.price{margin-top:6px;font-size:13px;opacity:.75}
-
-.tag{
-display:inline-block;
-margin-top:10px;
-padding:6px 10px;
-border-radius:999px;
-font-size:11px;
-background:rgba(96,165,250,.14);
-color:#93c5fd;
-}
-
-.loading{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.92);
-display:none;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-z-index:999;
-}
-.spinner{
-width:62px;height:62px;
-border-radius:50%;
-border:4px solid rgba(255,255,255,.08);
-border-top:4px solid #60a5fa;
-animation:spin 1s linear infinite;
-}
-@keyframes spin{100%{transform:rotate(360deg)}}
-
-.offerPage{display:none;padding:20px}
-.box{
-max-width:540px;
-margin:auto;
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.06);
-border-radius:24px;
-padding:22px;
-}
-
-.selectedImage{
-width:100%;
-height:190px;
-object-fit:contain;
-background:#fff;
-padding:18px;
-border-radius:18px;
-margin-bottom:16px;
-}
-
-#selectedTitle{font-size:28px;font-weight:800}
-
-.option{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px;
-margin-top:12px;
-border-radius:16px;
-background:rgba(255,255,255,.04);
-}
-
-.opt{
-font-size:14px;
-font-weight:700;
-opacity:.9;
-}
-
-.option button,.back{
-border:none;
-cursor:pointer;
-font-weight:700;
-border-radius:12px;
-padding:11px 16px;
-color:#fff;
-}
-
-.option button{
-background:linear-gradient(90deg,#22c55e,#16a34a);
-}
-
-.back{
-width:100%;
-margin-top:16px;
-background:#1f2937;
-}
-
-#lockerModal{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.95);
-display:none;
-justify-content:center;
-align-items:center;
-z-index:9999;
-}
-
-.lockerBox{
-width:90%;
-height:85%;
-max-width:500px;
-background:#111;
-border-radius:16px;
-overflow:hidden;
-position:relative;
-}
-
-.lockerBox iframe{
-width:100%;
-height:100%;
-border:none;
-}
-
-.closeBtn{
-position:absolute;
-top:10px;
-right:10px;
-background:red;
-color:#fff;
-border:none;
-padding:8px 12px;
-border-radius:8px;
-cursor:pointer;
-font-weight:bold;
-}
-
-.footer{text-align:center;padding:26px;font-size:12px;opacity:.45}
-
-@media(max-width:480px){
-.grid{grid-template-columns:1fr}
-.title{font-size:28px}
-#selectedTitle{font-size:23px}
-}
-
-/* TikTok overlay */
-#ttOverlay{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.96);
-display:none;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-z-index:999999;
-text-align:center;
-padding:20px;
-}
-#ttOverlay h2{margin-bottom:10px}
-#ttOverlay p{opacity:.7;margin-bottom:20px}
-#ttOverlay button{
-padding:12px 18px;
-border:none;
-border-radius:10px;
-background:#3b82f6;
-color:#fff;
-font-weight:800;
-cursor:pointer;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subnautica 2 - Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #030f1a; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .neon-glow { box-shadow: 0 0 20px rgba(6, 182, 212, 0.5); }
+    </style>
 </head>
+<body class="text-gray-200 antialiased">
 
-<body>
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-[#020a11] via-[#051b2e] to-[#030f1a] px-6 text-center overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551244072-5d12893278ab?q=80&w=1600')] bg-cover bg-center opacity-20 pointer-events-none"></div>
+        
+        <div class="relative z-10 max-w-3xl mx-auto">
+            <span class="inline-block bg-cyan-500/10 text-cyan-400 text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6 border border-cyan-500/30">
+                🔥 متوفرة الآن في الـ Early Access (ماي 2026)
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6">
+                SUBNAUTICA <span class="text-cyan-400">2</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 mb-10 leading-relaxed">
+                اكتشف كوكباً مائياً جديداً بالكامل. ابنِ قاعدتك، واجه المخاطر، والعب لأول مرة مع أصدقائك في طور الـ Co-op المشترك!
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#platforms" class="w-full sm:w-auto bg-cyan-500 hover:bg-cyan-400 text-black font-bold px-8 py-4 rounded-xl transition duration-300 transform hover:-translate-y-1 text-center neon-glow">
+                    احصل عليها الآن
+                </a>
+                <a href="#" class="w-full sm:w-auto bg-white/5 hover:bg-white/10 text-white font-medium px-8 py-4 rounded-xl transition duration-300 border border-white/10 text-center">
+                    شاهد العرض الإعلاني 🎬
+                </a>
+            </div>
+        </div>
+    </header>
 
-<!-- TikTok Overlay -->
-<div id="ttOverlay">
-<h2>Open in Browser</h2>
-<p>1- Tap the three dots at the top right
-2- Tap Open in browser</p>
-<button onclick="openChrome()">Open Now</button>
-</div>
+    <!-- Features Section -->
+    <section class="py-24 px-6 max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center text-white mb-16">مميزات الجيل الجديد من اللعبة</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-[#051627] p-8 rounded-2xl border border-white/5 hover:border-cyan-500/30 transition duration-300">
+                <div class="text-3xl mb-4">👥</div>
+                <h3 class="text-xl font-bold text-white mb-2">طور جماعي مشترك (Co-op)</h3>
+                <p class="text-gray-400">استكشف الأعماق مع فريقك الخاص الذي يصل إلى 4 لاعبين، ابنوا القواعد وتشاركوا الموارد معاً.</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="bg-[#051627] p-8 rounded-2xl border border-white/5 hover:border-cyan-500/30 transition duration-300">
+                <div class="text-3xl mb-4">🎮</div>
+                <h3 class="text-xl font-bold text-white mb-2">محرك Unreal Engine 5</h3>
+                <p class="text-gray-400">جرافيكس أسطوري وفيزياء مياه فائقة الواقعية تجعلك تشعر بكل قطرة ماء وكل خطر يحيط بك.</p>
+            </div>
+        </div>
+    </section>
 
-<div class="header">
-<div class="title">PREMIUM GIFT CARDS</div>
-<div class="sub">Select your card and continue</div>
-</div>
+    <!-- Platforms Section -->
+    <section id="platforms" class="bg-[#020a11] py-24 px-6 border-t border-white/5">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">المنصات المدعومة حالياً</h2>
+            <p class="text-gray-400 mb-12">اللعبة متوفرة حالياً للحواسب والأجهزة القوية فقط وغير متوفرة للهواتف.</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div class="bg-[#051627] p-6 rounded-xl border border-white/5">
+                    <p class="font-bold text-white mb-4">Steam (PC)</p>
+                    <a href="#" class="block bg-cyan-600 hover:bg-cyan-500 text-white text-sm font-bold py-2 rounded-lg transition">تحميل الآن</a>
+                </div>
+                <div class="bg-[#051627] p-6 rounded-xl border border-white/5">
+                    <p class="font-bold text-white mb-4">Epic Games</p>
+                    <a href="#" class="block bg-gray-700 hover:bg-gray-600 text-white text-sm font-bold py-2 rounded-lg transition">زيارة المتجر</a>
+                </div>
+                <div class="bg-[#051627] p-6 rounded-xl border border-white/5">
+                    <p class="font-bold text-white mb-4">Xbox Series X/S</p>
+                    <a href="#" class="block bg-green-600 hover:bg-green-500 text-white text-sm font-bold py-2 rounded-lg transition">شغلها بـ Game Pass</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="grid" id="grid">
-
-<div class="card" onclick="openOffer('ROBLOX 20$-50$ CARD', this)">
-<img src="https://logos-world.net/wp-content/uploads/2020/10/Roblox-Logo.png">
-<div class="name">ROBLOX</div>
-<div class="price">$20 - $50</div>
-<div class="tag">Still 46 Card</div>
-</div>
-
-<div class="card" onclick="openOffer('PLAYSTATION 25$-50$ CARD', this)">
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/00/PlayStation_logo.svg">
-<div class="name">PLAYSTATION</div>
-<div class="price">$25 - $50</div>
-<div class="tag">Still 37 Card</div>
-</div>
-
-<div class="card" onclick="openOffer('AMAZON 20$-150$ CARD', this)">
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg">
-<div class="name">AMAZON</div>
-<div class="price">$20 - $150</div>
-<div class="tag">Still 61 Card</div>
-</div>
-
-<div class="card" onclick="openOffer('APPLE 20$-75$ CARD', this)">
-<img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg">
-<div class="name">APPLE</div>
-<div class="price">$20 - $75</div>
-<div class="tag">Still 50 Card</div>
-</div>
-
-<div class="card" onclick="openOffer('GOOGLE PLAY 10$-100$ CARD', this)">
-<img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Play_Arrow_logo.svg">
-<div class="name">GOOGLE PLAY</div>
-<div class="price">$10 - $100</div>
-<div class="tag">Still 72 Card</div>
-</div>
-
-<div class="card" onclick="openOffer('NETFLIX 30$-50$ CARD', this)">
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg">
-<div class="name">NETFLIX</div>
-<div class="price">$30 - $50</div>
-<div class="tag">Still 28 Card</div>
-</div>
-
-</div>
-
-<div class="loading" id="loading">
-<div class="spinner"></div>
-<p style="margin-top:15px;opacity:.8;">Loading...</p>
-</div>
-
-<div class="offerPage" id="offerPage">
-<div class="box">
-
-<img id="selectedImage" class="selectedImage">
-<div id="selectedTitle"></div>
-
-<div class="option">
-<div class="opt">Fast Verification</div>
-<button onclick="go()">Start</button>
-</div>
-
-<div class="option">
-<div class="opt">Backup Option</div>
-<button onclick="go()">Start</button>
-</div>
-
-<button class="back" onclick="backPage()">← Back</button>
-
-</div>
-</div>
-
-<div id="lockerModal">
-<div class="lockerBox">
-<iframe id="lockerFrame"></iframe>
-<button class="closeBtn" onclick="closeLocker()">✕</button>
-</div>
-</div>
-
-<div class="footer">© 2026 Premium Gift Cards</div>
-
-<script>
-function openOffer(title,el){
-const img = el.querySelector("img").src;
-
-document.getElementById("loading").style.display="flex";
-
-setTimeout(()=>{
-document.getElementById("loading").style.display="none";
-document.getElementById("grid").style.display="none";
-document.getElementById("offerPage").style.display="block";
-
-document.getElementById("selectedTitle").innerText=title;
-document.getElementById("selectedImage").src=img;
-window.scrollTo({top:0,behavior:"smooth"});
-},900);
-}
-
-function go(){
-document.getElementById("lockerModal").style.display="flex";
-document.getElementById("lockerFrame").src="https://ogam.site/cl/i/pqq622";
-}
-
-function closeLocker(){
-document.getElementById("lockerModal").style.display="none";
-document.getElementById("lockerFrame").src="";
-}
-
-function backPage(){
-document.getElementById("offerPage").style.display="none";
-document.getElementById("grid").style.display="grid";
-}
-
-/* TikTok detect + overlay */
-function isTikTok(){
-return /TikTok|musical_ly/i.test(navigator.userAgent);
-}
-
-function openChrome(){
-const url = window.location.href;
-const intent = "intent://" + url.replace(/^https?:\/\//,'') +
-"#Intent;scheme=https;package=com.android.chrome;end;";
-window.location.href = intent;
-setTimeout(()=>{window.location.href=url},900);
-}
-
-window.addEventListener("load",()=>{
-if(isTikTok()){
-document.getElementById("ttOverlay").style.display="flex";
-}
-});
-</script>
+    <!-- Footer -->
+    <footer class="py-8 text-center text-sm text-gray-600 border-t border-white/5">
+        <p>© 2026 Subnautica 2 Fan Landing Page. جميع الحقوق محفوظة للشركة المطورة.</p>
+    </footer>
 
 </body>
 </html>
